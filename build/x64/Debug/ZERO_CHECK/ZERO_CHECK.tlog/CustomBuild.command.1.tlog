@@ -1,0 +1,10 @@
+^C:\USERS\ADMIN\DOCUMENTS\CODINGPROJECTS\CMBSTCMAKE\BUILD\CMAKEFILES\75EB739BE8F37F01FD4D371BE70A722B\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/Admin/Documents/codingProjects/cmbstCmake -BC:/Users/Admin/Documents/codingProjects/cmbstCmake/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/Admin/Documents/codingProjects/cmbstCmake/build/CmbstEngine.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
