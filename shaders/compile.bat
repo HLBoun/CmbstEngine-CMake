@@ -1,3 +1,6 @@
 C:\VulkanSDK\1.4.335.0\Bin\glslc.exe .\simple_shader.vert -o .\simple_shader.vert.spv
 C:\VulkanSDK\1.4.335.0\Bin\glslc.exe .\simple_shader.frag -o .\simple_shader.frag.spv
+
+copy .\simple_shader.frag.spv ..\build\Debug\
+copy .\simple_shader.vert.spv ..\build\Debug\
 pause
