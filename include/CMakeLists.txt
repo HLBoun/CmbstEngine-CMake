@@ -8,6 +8,7 @@ set(INCLUDED
       cmbst_game_object.hpp
       cmbst_model.hpp
       cmbst_swap_chain.hpp
+      cmbst_renderer.hpp
 
 )
 

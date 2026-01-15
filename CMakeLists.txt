@@ -16,6 +16,7 @@ set(SRC
       src/cmbst_device.cpp
       src/cmbst_model.cpp
       src/cmbst_swap_chain.cpp
+      src/cmbst_renderer.cpp
 )
 
 
