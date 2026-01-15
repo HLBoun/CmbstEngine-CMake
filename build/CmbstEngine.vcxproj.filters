@@ -25,6 +25,9 @@
     <ClCompile Include="C:\Users\Admin\Documents\codingProjects\cmbstCmake\src\cmbst_renderer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="C:\Users\Admin\Documents\codingProjects\cmbstCmake\src\simple_render_system.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="C:\Users\Admin\Documents\codingProjects\cmbstCmake\CMakeLists.txt" />

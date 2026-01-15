@@ -380,6 +380,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClCompile Include="C:\Users\Admin\Documents\codingProjects\cmbstCmake\src\cmbst_model.cpp" />
     <ClCompile Include="C:\Users\Admin\Documents\codingProjects\cmbstCmake\src\cmbst_swap_chain.cpp" />
     <ClCompile Include="C:\Users\Admin\Documents\codingProjects\cmbstCmake\src\cmbst_renderer.cpp" />
+    <ClCompile Include="C:\Users\Admin\Documents\codingProjects\cmbstCmake\src\simple_render_system.cpp" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

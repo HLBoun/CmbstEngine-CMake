@@ -34,13 +34,14 @@ namespace cmbst
       }
       else
       {
-          cmbstSwapChain = std::make_unique<CmbstSwapChain>(cmbstDevice, extent, std::move(cmbstSwapChain));
+	  std::shared_ptr<CmbstSwapChain> oldSwapChain = std::move( cmbstSwapChain);
+          cmbstSwapChain = std::make_unique<CmbstSwapChain>(cmbstDevice, extent, oldSwapChain);
 
-          if (cmbstSwapChain->imageCount() != commandBuffers.size())
-          {
-              freeCommandBuffers();
-              createCommandBuffers();
-          }
+	  if(!oldSwapChain->compareSwapFormats(*cmbstSwapChain.get()))
+	  {
+	      throw std::runtime_error("Swap chain image(or depth) format has changed!");
+	  }
+
       }
       // we'll come back to this
   }
@@ -48,7 +49,7 @@ namespace cmbst
 
   void CmbstRenderer::createCommandBuffers()
   {
-    commandBuffers.resize(cmbstSwapChain->imageCount());
+    commandBuffers.resize(CmbstSwapChain::MAX_FRAMES_IN_FLIGHT);
 
     VkCommandBufferAllocateInfo allocInfo{};
     allocInfo.sType = VK_STRUCTURE_TYPE_COMMAND_BUFFER_ALLOCATE_INFO;
@@ -126,7 +127,9 @@ namespace cmbst
       {
         throw std::runtime_error("failed to present swap chain image!");
       }
+
       isFrameStarted = false;
+      currentFrameIndex = (currentFrameIndex + 1) % CmbstSwapChain::MAX_FRAMES_IN_FLIGHT;
   }
 
   void CmbstRenderer::beginSwapChainRenderPass(VkCommandBuffer commandBuffer)

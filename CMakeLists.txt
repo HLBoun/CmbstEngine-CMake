@@ -17,6 +17,7 @@ set(SRC
       src/cmbst_model.cpp
       src/cmbst_swap_chain.cpp
       src/cmbst_renderer.cpp
+      src/simple_render_system.cpp
 )
 
 

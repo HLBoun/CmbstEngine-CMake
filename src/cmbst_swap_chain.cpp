@@ -281,7 +281,7 @@ namespace cmbst
         subpass.pDepthStencilAttachment = &depthAttachmentRef;
 
         VkSubpassDependency dependency = {};
-        dependency.srcSubpass = VK_SUBPASS_EXTERNAL;
+        dependency.dstSubpass = VK_SUBPASS_EXTERNAL;
         dependency.srcAccessMask = 0;
         dependency.srcStageMask =
             VK_PIPELINE_STAGE_COLOR_ATTACHMENT_OUTPUT_BIT | VK_PIPELINE_STAGE_EARLY_FRAGMENT_TESTS_BIT;
@@ -338,6 +338,7 @@ namespace cmbst
     void CmbstSwapChain::createDepthResources() 
     {
         VkFormat depthFormat = findDepthFormat();
+	swapChainDepthFormat = depthFormat;
         VkExtent2D swapChainExtent = getSwapChainExtent();
 
         depthImages.resize(imageCount());

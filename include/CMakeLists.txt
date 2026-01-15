@@ -9,6 +9,7 @@ set(INCLUDED
       cmbst_model.hpp
       cmbst_swap_chain.hpp
       cmbst_renderer.hpp
+      simple_render_system.hpp
 
 )
 
